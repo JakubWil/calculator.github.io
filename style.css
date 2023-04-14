@@ -1,0 +1,163 @@
+body {
+  /* color: #ced4da; */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  display: flex;
+  width: 100%;
+  height: 1000px;
+  background-image: linear-gradient(to right, #141e30, #243b55);
+  font-family: "Roboto", sans-serif;
+}
+
+.info {
+  padding-top: 100px;
+  display: flex;
+  background-color: #243b55;
+  flex-direction: column;
+  align-items: center;
+  width: 400px;
+  margin-right: 300px;
+}
+
+/* Style dla switchera , dla label czyli label rozszerzam i tam gdzie klikne
+to zareaguje checkbox*/
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+/* Ukryj oryginalny input checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* Styl dla slidera  tworze jakby sam na tle checkbox switcher*/
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+/*Tu robie to kolko */
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+/* Style dla slidera w stanie checked (włączony) */
+input:checked + .slider {
+  background-color: #2196f3;
+}
+
+/* Tu aby kolko przeszlo na strony  */
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Style dla kółka na sliderze */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+.info-h {
+  color: #fff;
+}
+
+.info-p {
+  color: #fff;
+}
+
+.calculator {
+  /* background-color: #ffff6e; */
+  width: 288px;
+  padding-top: 150px;
+  border-radius: 10px;
+}
+
+.screen {
+  width: 100%;
+  height: 55px;
+  /* background-color: rgb(176, 205, 176); */
+  font-size: 40px;
+  text-align: end;
+  padding: 4px;
+  overflow: scroll;
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 3px;
+  /* width: 232px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1px; */
+}
+
+button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #4b617b;
+  border: none;
+  color: #ced4da;
+  font-size: 30px;
+  width: 60px;
+  height: 60px;
+  /* border-radius: 25px; */
+  margin: 4px;
+  transition: all 0.5s;
+}
+
+button:hover {
+  background-color: #845ef7;
+  transform: scale(1.2);
+}
+
+button:active {
+  background-color: #7950f2;
+}
+
+#equals {
+  background-color: #4b617b;
+}
+#equals:hover {
+  background-color: #7950f2;
+}
+
+#clear {
+  width: 280px;
+  color: #ced4da;
+
+  font-size: 30px;
+}
+
+#clear:hover {
+  background-color: #845ef7;
+}
